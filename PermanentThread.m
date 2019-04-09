@@ -25,6 +25,7 @@
             CFRunLoopSourceRef ref = CFRunLoopSourceCreate(CFAllocatorGetDefault(), 0, &context);
             CFRunLoopAddSource(CFRunLoopGetCurrent(), ref, kCFRunLoopDefaultMode);
             CFRunLoopRunInMode(kCFRunLoopDefaultMode, 10e10, false);
+            CFRelease(ref);
         }];
         [self.thread start];
     }
